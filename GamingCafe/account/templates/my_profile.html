@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body_block %}
+    <!-- Page top section -->
+	<section class="page-top-section set-bg" data-setbg="{% static 'img/banner-bg.jpg' %}">
+		<div class="container">
+			<h2>Welcome @{{userprofile.user}}</h2>
+		</div>
+	</section>
+	<!-- Page top section end -->
+    <section class="characters-section character-one">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-7">
+					<div class="character-info">
+						<img src="{% static 'img/game-characters/title-icon.png' %}" alt="">
+						<h2>{{userprofile.membership_status}}</h2>
+						<h5>Join Date : {{userprofile.join_date}}</h5>
+						<h5>Email : {{userprofile.user.email}}</h5>
+						<p>{{userprofile.membership_status.description}}</p>
+						<div class="progress-warp">
+							<div class="cp-item">
+								<div class="circle-progress" data-cpid="id-1" data-cpvalue="{{userprofile.total_time}}" data-cpcolor="#10ddb4"></div>
+								<h4>Total Time</h4>
+							</div>
+							<div class="cp-item">
+								<div class="circle-progress" data-cpid="id-2" data-cpvalue="{{userprofile.time_left}}" data-cpcolor="#10ddb4"></div>
+								<h4>Time Left</h4>
+							</div>
+							<div class="cp-item">
+								<div class="circle-progress" data-cpid="id-3" data-cpvalue="{{userprofile.membership_status.discount_offered}}" data-cpcolor="#10ddb4"></div>
+								<h4>Discount Offered</h4>
+							</div>
+						</div>
+						<a href="#" class="site-btn">Read More</a>
+					</div>
+				</div>
+			</div>
+			<div class="character-img">
+                {% if userprofile.membership_status.rank == "The Warrior" %}
+                <img src="{% static 'img/game-characters/2.png' %}" alt="">
+                {% elif userprofile.membership_status.rank == "The Mage" %}
+                <img src="{% static 'img/game-characters/3.png' %}" alt="">
+                {% elif userprofile.membership_status.rank == "The Knight" %}
+                <img src="{% static 'img/game-characters/1.png' %}" alt="">
+                {% elif userprofile.membership_status.rank == "The Witcher" %}
+                <img src="{% static 'img/game-characters/4.png' %}" alt="">
+                {% endif %}
+				<!--<img src="{% static 'img/game-characters/1.png' %}" alt="">-->
+			</div>
+		</div>
+	</section>
+	<!-- Character section 1 end -->
+
+
+
+{% endblock body_block %}

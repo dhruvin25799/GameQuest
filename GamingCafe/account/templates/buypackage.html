@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body_block %}
+<!-- Page top section -->
+	<section class="page-top-section set-bg" data-setbg="{% static 'img/header-bg/1.jpg' %}">
+		<div class="container">
+			<h2>Congratulations Package Bought!</h2>
+            <a href="{% url 'home' %}">Home</a>
+		</div>
+	</section>
+	<!-- Page top section end -->
+
+{% endblock body_block %}

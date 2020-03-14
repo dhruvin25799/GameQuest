@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body_block %}
+<!-- Page top section -->
+	<section class="page-top-section set-bg" data-setbg="{% static 'img/header-bg/1.jpg' %}">
+		<div class="container">
+			<h2>Plans</h2>
+		</div>
+	</section>
+	<!-- Page top section end -->
+
+	{% for package in object_list %}
+	{% cycle 'characters-section character-one' 'characters-section character-two' 'characters-section character-three' 'characters-section character-four' as section_class silent %}
+	{% cycle "col-lg-7" "col-lg-7 offset-lg-5" as div_class silent %}
+	{% cycle 'img/game-characters/1.png' 'img/game-characters/2.png' 'img/game-characters/3.png' 'img/game-characters/4.png' as char_image silent %}
+
+	<section class="{{section_class}}">
+		<div class="container">
+			<div class="row">
+				<div class="{{div_class}}">
+					<div class="character-info">
+						<img src="{% static 'img/game-characters/title-icon.png' %}" alt="">
+						<h2>{{package.name}}</h2>
+						<h5>Time : {{package.time_added}} Hr.</h5>
+						<h5>Price : {{package.price}} Rs.</h5>
+						<p>{{package.description}}</p>
+						<div class="progress-warp">
+							<div class="cp-item">
+								<div class="circle-progress" data-cpid="id-1" data-cpvalue="75" data-cpcolor="#10ddb4"></div>
+								<h4>Monthly</h4>
+							</div>
+							<div class="cp-item">
+								<div class="circle-progress" data-cpid="id-2" data-cpvalue="90" data-cpcolor="#10ddb4"></div>
+								<h4>Quaterly</h4>
+							</div>
+							<div class="cp-item">
+								<div class="circle-progress" data-cpid="id-3" data-cpvalue="80" data-cpcolor="#10ddb4"></div>
+								<h4>Yearly</h4>
+							</div>
+						</div>
+						{% if user.is_authenticated %}
+						<li><a href="{% url 'account:confirmbuypackage' package_pk=package.pk curr_user=user %}" class="site-btn">Buy</a></li>
+						{% else %}
+						<a href="{% url 'account:login' %}" class="site-btn">Login</a>
+						<a href="{% url 'account:signup' %}" class="site-btn">Sign Up</a>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+			<div class="character-img">
+				<img src="{% static char_image %}" alt="">
+			</div>
+		</div>
+	</section>
+
+	{% endfor %}
+	
+	<!-- Banner section -->
+	<section class="banner-section set-bg" data-setbg="{% static 'img/banner-bg.jpg' %}">
+		<div class="container">
+			<div class="banner-text text-white">
+				<div class="banner-logo">
+					<h6>Spring Special Offer</h6>
+					<img src="{% static 'img/logo-3.png' %}" alt="">
+				</div>
+				<p>Vestibulum malesuada aliquet libero viverra cursus. Aliquam erat volutpat. Morbi id dictum quam, ut commodo lorem. In at nisi nec arcu porttitor aliquet vitae at dui. Sed sollicitudin nulla non leo viverra scelerisque.</p>
+				<a href="#" class="site-btn sb-color">Buy it now</a>
+			</div>
+		</div>
+	</section>
+	<!-- Banner section end -->
+{% endblock body_block %}

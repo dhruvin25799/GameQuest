@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block body_block %}
+	<!-- Page top section -->
+	<section class="page-top-section set-bg" data-setbg="{% static 'img/header-bg/2.jpg' %}">
+		<div class="container">
+			<h2>Membership Ranks and Perks</h2>
+		</div>
+	</section>
+	<!-- Page top section end -->
+    
+	<!-- Characters boxes section -->
+	<section class="characters-boxes-section">
+		<div class="container">
+			<div class="game-title">
+				<img src="{% static 'img/game-characters/title-icon.png' %}" alt="">
+				<h2>Ranks</h2>
+			</div>
+            <div class="row">
+            {% for membership in object_list %}
+            {% cycle 'img/characters-boxes/2.jpg' 'img/characters-boxes/3.jpg' 'img/characters-boxes/1.jpg' 'img/characters-boxes/4.jpg' as membership_image silent %}
+                <div class="col-lg-3 col-sm-6">
+					<div class="characters-box">
+						<img src="{% static membership_image %}" alt="">
+						<h4>{{membership.rank}}</h4>
+						<p>{{membership.description}}</p>
+                        <h5 class='text-white'>Eligibility : {{membership.eligibility}} Hours</h5>
+                        <h5 class='text-white'>Discount Offered : {{membership.discount_offered}}%</h5>
+						<a href="#" class="rm">See More</a>
+					</div>
+				</div>
+            {% endfor %}
+            </div>
+	</section>
+	<!-- Characters boxes section end -->
+{% endblock body_block %}
