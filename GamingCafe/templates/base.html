@@ -2,9 +2,9 @@
 {% load staticfiles %}
 <html lang="zxx">
 <head>
-	<title>TheQuest - Gaming Magazine Template</title>
+	<title>GameQuest - The Gaming Portal</title>
 	<meta charset="UTF-8">
-	<meta name="description" content="TheQuest Gaming Magazine Template">
+	<meta name="description" content="GameQuest - The Gaming Portal">
 	<meta name="keywords" content="gaming, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
@@ -60,148 +60,13 @@
 			<form action="{% url 'account:signup' %}">
 				<li><input class="login-btn" type="Submit" value="Sign up" href="{% url 'account:signup' %}"></li>
 			</form>
-			<!--<li><input class="login-btn" type="button" name="login" value="Login / Sign up" href="{% url 'account:signup' %}"></li>-->
 		</ul>
 		{% endif %}
 	</header>
 	<!-- Header section end -->
 
-
-	<!-- Hero section end -->
 	{% block body_block %}
 	{% endblock body_block %}
-	<!-- Blog section -->
-	<!--
-	<section class="blog-section spad">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 blog-posts">
-					<div class="blog-post featured-post">
-						<img src="{% static 'img/blog/1.jpg' %}" alt="">
-						<div class="post-date">April 1, 2019</div>
-						<h3>The best games of 2019</h3>
-						<div class="post-metas">
-							<div class="post-meta">By Admin</div>
-							<div class="post-meta">in <a href="#">Games</a></div>
-							<div class="post-meta">3 Comments</div>
-						</div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Fusce urna quam, euismod sit amet mollis quis, vestibulum quis velit. Morbi id dictum quam, ut commodo lorem. In at nisi nec arcu porttitor aliquet vitae at dui. </p>
-						<a href="#" class="site-btn">Read More</a>
-					</div>
-					<div class="row">
-						<div class="col-md-6">
-							<div class="blog-post">
-								<img src="{% static 'img/blog/2.jpg' %}" alt="">
-								<div class="post-date">April 1,2019</div>
-								<h4>The best games of 2019</h4>
-								<div class="post-metas">
-									<div class="post-meta">By Admin</div>
-									<div class="post-meta">in <a href="#">Games</a></div>
-									<div class="post-meta">3 Comments</div>
-								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum susp-endisse ultrices gravida. Risus commodo.</p>
-								<a href="#" class="read-more">Read More</a>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="blog-post">
-								<img src="{% static 'img/blog/3.jpg' %}" alt="">
-								<div class="post-date">April 1,2019</div>
-								<h4>Tips to play a better game</h4>
-								<div class="post-metas">
-									<div class="post-meta">By Admin</div>
-									<div class="post-meta">in <a href="#">Games</a></div>
-									<div class="post-meta">3 Comments</div>
-								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum susp-endisse ultrices gravida. Risus commodo.</p>
-								<a href="#" class="read-more">Read More</a>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="blog-post">
-								<img src="{% static 'img/blog/4.jpg' %}" alt="">
-								<div class="post-date">April 1,2019</div>
-								<h4>The best games of 2019</h4>
-								<div class="post-metas">
-									<div class="post-meta">By Admin</div>
-									<div class="post-meta">in <a href="#">Games</a></div>
-									<div class="post-meta">3 Comments</div>
-								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum susp-endisse ultrices gravida. Risus commodo.</p>
-								<a href="#" class="read-more">Read More</a>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="blog-post">
-								<img src="{% static 'img/blog/5.jpg' %}" alt="">
-								<div class="post-date">April 1,2019</div>
-								<h4>Tips to play a better game</h4>
-								<div class="post-metas">
-									<div class="post-meta">By Admin</div>
-									<div class="post-meta">in <a href="#">Games</a></div>
-									<div class="post-meta">3 Comments</div>
-								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum susp-endisse ultrices gravida. Risus commodo.</p>
-								<a href="#" class="read-more">Read More</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 sidebar">
-					<div class="sb-widget">
-						<form class="sb-search">
-							<input type="text" placeholder="Search">
-						</form>
-					</div>
-					<div class="sb-widget">
-						<h2 class="sb-title">Categories</h2>
-						<ul class="sb-cata-list">
-							<li><a href="">Games<span>20</span></a></li>
-							<li><a href="">Gaming Tips & Tricks<span>23</span></a></li>
-							<li><a href="">Online Games<span>25</span></a></li>
-							<li><a href="">Team Games<span>17</span></a></li>
-							<li><a href="">Community<span>15</span></a></li>
-							<li><a href="">Uncategorized<span>22</span></a></li>
-						</ul>
-					</div>
-					<div class="sb-widget">
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-					</div>
-					<div class="sb-widget">
-						<img src="{% static 'img/adv.jpg' %}">
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	-->
-	<!-- Blog section end -->
-
-	<!-- Video section -->
-	<!--
-	<div class="video-section">
-		<div class="container">
-			<div class="video-logo">
-				<img src="{% static 'img/logo.png' %}" alt="" >
-				<p>Your Gaming Buddy</p>
-			</div>
-			<div class="video-popup-warp">
-				<img src="{% static 'img/video-bg.jpg' %}" alt="">
-				<a href="https://www.youtube.com/watch?v=xzCEdSKMkdU" class="video-play"><i class="fa fa-play"></i></a>
-			</div>
-		</div>
-	</div>
-	-->
-	<!-- Video section end -->
 
 	<!-- Footer section -->
 	<div class="footer-section">
@@ -211,7 +76,7 @@
 					<div class="footer-widget">
 						<div class="about-widget">
 							<img src="{% static 'img/logo.png' %}" alt="">
-							<p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo. Morbi id dictum quam, ut commodo.</p>
+							<p>GameQuest was created with the mission of easing the LAN Gaming transactions with seamless buying transactions and maintaining records.</p>
 						</div>
 					</div>
 				</div>
@@ -223,19 +88,20 @@
 					<div class="footer-widget">
 						<h2 class="fw-title">Services</h2>
 						<ul>
-							<li><a href="">About us</a></li>
-							<li><a href="">Services</a></li>
-							<li><a href="">FAQ</a></li>
+							<li><a href="{% url 'game:gamelist' %}">Games</a></li>
+							<li><a href="{% url 'package:packagelist' %}">Plans</a></li>
+							<li><a href="{% url 'membership:membershiplist' %}">Memberships</a></li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-lg-2 col-sm-6">
 					<div class="footer-widget">
-						<h2 class="fw-title">Careeres</h2>
+						<h2 class="fw-title">Our Team</h2>
 						<ul>
-							<li><a href="">Subscriptions</a></li>
-							<li><a href="">Careers</a></li>
-							<li><a href="">Our team</a></li>
+							<li><a href="">Dhruvin(B057)</a></li>
+							<li><a href="">Maharshi(B055)</a></li>
+							<li><a href="">Kshitij(B058)</a></li>
+							<li><a href="">Pranay(B059)</a></li>
 						</ul>
 					</div>
 				</div>

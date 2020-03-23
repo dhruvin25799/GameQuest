@@ -4,6 +4,21 @@
 	<!-- Hero section -->
 	<section class="hero-section">
 		<div class="hero-slider owl-carousel">
+		{% for game  in games %}
+		{% cycle 'img/slider/5.jpg' 'img/slider/6.png' 'img/slider/7.jpg' 'img/slider/3.png' as slider_img silent %}
+		<div class="hero-item set-bg" data-setbg="{% static slider_img %}">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 offset-lg-1">
+							<h2>{{game.name}}</h2>
+							<p>{{game.description}}</p>
+							<a href="#" class="site-btn">Read More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+			<!--
 			<div class="hero-item set-bg" data-setbg="{% static 'img/slider/1.jpg' %}">
 				<div class="container">
 					<div class="row">
@@ -47,6 +62,7 @@
 						</div>
 					</div>
 				</div>
+				-->
 			</div>
 		</div>
 	</section>

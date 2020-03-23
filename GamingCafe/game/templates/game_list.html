@@ -5,11 +5,12 @@
 	<!-- Page top section -->
 	<section class="page-top-section set-bg" data-setbg="{% static 'img/header-bg/2.jpg' %}">
 		<div class="container">
-			<h2>The Game</h2>
+			<h2>Our Games</h2>
 		</div>
 	</section>
 	<!-- Page top section end -->
     {% for game in object_list %}
+	{% cycle 'img/game-characters/6.png' 'img/game-characters/7.png' 'img/game-characters/8.png' 'img/game-characters/9.png' as char_image silent %}
     <section class="game-section character-one">
 		<div class="container">
 			<div class="row">
@@ -32,43 +33,11 @@
 				</div>
 				<div class="col-lg-5">
 					<div class="about-game-img">
-						<img src="{% static 'img/game-characters/5.png' %}" alt="">
+						<img src="{% static char_image %}" alt="">
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
     {% endfor %}
-	<!-- Game section -->
-    <!--
-	<section class="game-section character-one">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-7">
-					<div class="about-game">
-						<div class="game-title mb-0">
-							<img src="{% static 'img/game-characters/title-icon.png' %}" alt="">
-							<h2>About the Quest</h2>
-						</div>
-						<div class="rating">
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-						</div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Fusce urna quam, euismod sit amet mollis quis, vestibulum quis velit. Vestibulum malesuada aliquet libero viverra cursus. Aliquam erat volutpat. Morbi id dictum quam, ut commodo lorem. In at nisi nec arcu porttitor aliquet vitae at dui. Sed sollicitudin nulla non leo viverra scelerisque.Fusce urna quam, euismod sit amet mollis quis, vestibulum quis velit.</p>
-						<div class="site-btn">Read More</div>
-					</div>
-				</div>
-				<div class="col-lg-5">
-					<div class="about-game-img">
-						<img src="{% static 'img/game-characters/5.png' %}" alt="">
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-    -->
-	<!-- Game section end -->
 {% endblock body_block %}
