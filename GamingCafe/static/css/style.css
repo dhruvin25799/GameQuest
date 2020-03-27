@@ -847,6 +847,11 @@ Blog list section
 	margin-bottom: 5px;
 }
 
+.btn-default {
+	color: white;
+	background-color: lightskyblue;
+}
+
 .small-blog-list .sb-text .sb-metas .sb-meta:after {
 	position: absolute;
 	content: "|";
